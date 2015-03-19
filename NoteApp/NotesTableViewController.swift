@@ -34,6 +34,14 @@ class NotesTableViewController: UITableViewController, AddNoteViewControllerDele
     
     func saveNote(controller: AddNoteViewController, noteText: String) {
         println("This is text entered in AddNoteViewController: \(noteText)")
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+        var mutableNotes:NSMutableArray = NSMutableArray(array:notes)
+        mutableNotes.addObject(noteText)
+        notes = NSArray(array:mutableNotes)
+        
+        tableView.reloadData()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

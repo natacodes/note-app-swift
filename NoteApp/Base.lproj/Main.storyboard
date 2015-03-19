@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="A3L-ZB-6Jh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Add Note View Controller-->
@@ -16,13 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add a new note" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwQ-Eg-Z9c">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new note" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwQ-Eg-Z9c">
                                 <rect key="frame" x="100" y="72" width="121" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="628-Lb-Tfg">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="628-Lb-Tfg">
                                 <rect key="frame" x="136" y="153" width="48" height="30"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,8 +32,8 @@
                                     <action selector="closeAddNote:" destination="CCJ-fF-dgV" eventType="touchUpInside" id="o0t-HQ-uCj"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FVK-Lx-HPf">
-                                <rect key="frame" x="16" y="110" width="288" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FVK-Lx-HPf">
+                                <rect key="frame" x="16" y="109" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -41,6 +42,20 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="628-Lb-Tfg" firstAttribute="top" secondItem="FVK-Lx-HPf" secondAttribute="bottom" constant="14" id="2mS-S5-BSu"/>
+                            <constraint firstAttribute="centerY" secondItem="628-Lb-Tfg" secondAttribute="centerY" constant="116" id="6Pb-Ip-q1P"/>
+                            <constraint firstAttribute="centerY" secondItem="FVK-Lx-HPf" secondAttribute="centerY" constant="160" id="7o2-zP-R7f"/>
+                            <constraint firstAttribute="centerY" secondItem="628-Lb-Tfg" secondAttribute="centerY" constant="116" id="8Pc-KT-u94"/>
+                            <constraint firstItem="628-Lb-Tfg" firstAttribute="leading" secondItem="2Ab-pt-EfA" secondAttribute="leadingMargin" constant="120" id="Ckq-Gd-mcq"/>
+                            <constraint firstItem="FVK-Lx-HPf" firstAttribute="trailing" secondItem="2Ab-pt-EfA" secondAttribute="trailingMargin" id="Jih-SY-v5w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="628-Lb-Tfg" secondAttribute="trailing" constant="120" id="Of3-fb-w28"/>
+                            <constraint firstItem="IwQ-Eg-Z9c" firstAttribute="leading" secondItem="2Ab-pt-EfA" secondAttribute="leadingMargin" constant="84" id="PmR-wY-tSh"/>
+                            <constraint firstItem="FVK-Lx-HPf" firstAttribute="top" secondItem="IwQ-Eg-Z9c" secondAttribute="bottom" constant="16" id="XpZ-8r-rZN"/>
+                            <constraint firstItem="FVK-Lx-HPf" firstAttribute="leading" secondItem="2Ab-pt-EfA" secondAttribute="leadingMargin" id="bUm-1U-Lsz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IwQ-Eg-Z9c" secondAttribute="trailing" constant="83" id="sKy-1b-rKh"/>
+                            <constraint firstAttribute="centerX" secondItem="FVK-Lx-HPf" secondAttribute="centerX" id="saE-zp-t1J"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="ourTextField" destination="FVK-Lx-HPf" id="ovJ-re-fmL"/>
